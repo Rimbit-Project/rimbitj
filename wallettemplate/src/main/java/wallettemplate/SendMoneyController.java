@@ -1,6 +1,6 @@
 package wallettemplate;
 
-import com.google.bitcoin.core.*;
+import com.rimbit.rimbit.core.*;
 import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
 import javafx.application.Platform;
@@ -8,7 +8,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import wallettemplate.controls.BitcoinAddressValidator;
+import wallettemplate.controls.RimbitAddressValidator;
 
 import static wallettemplate.utils.GuiUtils.crashAlert;
 import static wallettemplate.utils.GuiUtils.informationalAlert;
@@ -25,7 +25,7 @@ public class SendMoneyController {
 
     // Called by FXMLLoader
     public void initialize() {
-        new BitcoinAddressValidator(Main.params, address, sendBtn);
+        new RimbitAddressValidator(Main.params, address, sendBtn);
     }
 
     public void cancel(ActionEvent event) {
@@ -36,7 +36,7 @@ public class SendMoneyController {
         try {
             Address destination = new Address(Main.params, address.getText());
             Wallet.SendRequest req = Wallet.SendRequest.emptyWallet(destination);
-            sendResult = Main.bitcoin.wallet().sendCoins(req);
+            sendResult = Main.rimbit.wallet().sendCoins(req);
             Futures.addCallback(sendResult.broadcastComplete, new FutureCallback<Transaction>() {
                 @Override
                 public void onSuccess(Transaction result) {

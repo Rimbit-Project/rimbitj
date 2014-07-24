@@ -1,9 +1,9 @@
 package wallettemplate;
 
-import com.google.bitcoin.core.AbstractWalletEventListener;
-import com.google.bitcoin.core.DownloadListener;
-import com.google.bitcoin.core.Utils;
-import com.google.bitcoin.core.Wallet;
+import com.rimbit.rimbit.core.AbstractWalletEventListener;
+import com.rimbit.rimbit.core.DownloadListener;
+import com.rimbit.rimbit.core.Utils;
+import com.rimbit.rimbit.core.Wallet;
 import javafx.animation.*;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -13,12 +13,12 @@ import javafx.scene.control.ProgressBar;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.util.Duration;
-import wallettemplate.controls.ClickableBitcoinAddress;
+import wallettemplate.controls.ClickableRimbitAddress;
 
 import java.math.BigInteger;
 import java.util.Date;
 
-import static wallettemplate.Main.bitcoin;
+import static wallettemplate.Main.rimbit;
 import static wallettemplate.utils.GuiUtils.checkGuiThread;
 
 /**
@@ -31,7 +31,7 @@ public class Controller {
     public HBox controlsBox;
     public Label balance;
     public Button sendMoneyOutBtn;
-    public ClickableBitcoinAddress addressControl;
+    public ClickableRimbitAddress addressControl;
 
     // Called by FXMLLoader.
     public void initialize() {
@@ -39,9 +39,9 @@ public class Controller {
         addressControl.setOpacity(0.0);
     }
 
-    public void onBitcoinSetup() {
-        bitcoin.wallet().addEventListener(new BalanceUpdater());
-        addressControl.setAddress(bitcoin.wallet().getKeys().get(0).toAddress(Main.params).toString());
+    public void onRimbitSetup() {
+        rimbit.wallet().addEventListener(new BalanceUpdater());
+        addressControl.setAddress(rimbit.wallet().getKeys().get(0).toAddress(Main.params).toString());
         refreshBalanceLabel();
     }
 
@@ -94,7 +94,7 @@ public class Controller {
     }
 
     public void refreshBalanceLabel() {
-        final BigInteger amount = bitcoin.wallet().getBalance(Wallet.BalanceType.ESTIMATED);
-        balance.setText(Utils.bitcoinValueToFriendlyString(amount));
+        final BigInteger amount = rimbit.wallet().getBalance(Wallet.BalanceType.ESTIMATED);
+        balance.setText(Utils.rimbitValueToFriendlyString(amount));
     }
 }

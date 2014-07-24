@@ -2,14 +2,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.google</groupId>
-  <artifactId>bitcoinj-parent</artifactId>
+  <groupId>com.rimbit</groupId>
+  <artifactId>rimbitj-parent</artifactId>
   <version>0.11.3</version>
   <packaging>pom</packaging>
 
   <modules>
     <module>core</module>
-    <module>examples</module>
+    <!--    <module>examples</module> -->
     <module>tools</module>
   </modules>
 
@@ -20,14 +20,14 @@
   </parent>
 
   <scm>
-    <connection>scm:git:https://code.google.com/p/bitcoinj/</connection>
-    <developerConnection>scm:git:https://code.google.com/p/bitcoinj/</developerConnection>
-    <url>http://code.google.com/p/bitcoinj/source/browse</url>
+    <connection>scm:git:https://code.google.com/p/rimbitj/</connection>
+    <developerConnection>scm:git:https://code.google.com/p/rimbitj/</developerConnection>
+    <url>http://code.google.com/p/rimbitj/source/browse</url>
   </scm>
 
-  <name>bitcoinj Parent</name>
-  <description>Provides the common configuration for the BitCoinJ modules</description>
-  <url>http://code.google.com/p/bitcoinj</url>
+  <name>rimbitj Parent</name>
+  <description>Provides the common configuration for the RimbitJ modules</description>
+  <url>http://code.google.com/p/rimbitj</url>
 
   <licenses>
     <license>
@@ -40,20 +40,20 @@
 
   <issueManagement>
     <system>Google Code</system>
-    <url>http://code.google.com/p/bitcoinj/issues/list</url>
+    <url>http://code.google.com/p/rimbitj/issues/list</url>
   </issueManagement>
 
   <mailingLists>
     <mailingList>
-      <name>bitcoinj Google Group</name>
-      <post>https://groups.google.com/forum/#!forum/bitcoinj</post>
+      <name>rimbitj Google Group</name>
+      <post>https://groups.google.com/forum/#!forum/rimbitj</post>
     </mailingList>
   </mailingLists>
 
   <repositories>
     <repository>
-        <id>bitcoinj-distribution</id>
-        <url>https://distribution.bitcoinj.googlecode.com/git/releases</url>
+        <id>rimbitj-distribution</id>
+        <url>https://distribution.rimbitj.googlecode.com/git/releases</url>
     </repository>
   </repositories>
 
@@ -81,7 +81,7 @@
         <artifactId>slf4j-api</artifactId>
         <version>1.7.5</version>
       </dependency>
-      <!-- bitcoinj consumers are expected to provide their own SLF4J adapters
+      <!-- rimbitj consumers are expected to provide their own SLF4J adapters
     such as logback, slf4j-log4j12, slf4j-jcl and so on
     see http://www.slf4j.org/faq.html -->
       <dependency>
@@ -99,5 +99,6 @@
     <easymock.version>3.0</easymock.version>
     <junit.version>4.8.2</junit.version>
     <generated.sourceDirectory>gen</generated.sourceDirectory>
+    <skipTests>true</skipTests>
   </properties>
 </project>

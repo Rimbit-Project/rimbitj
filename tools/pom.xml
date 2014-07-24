@@ -19,16 +19,16 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <parent>
-    <groupId>com.google</groupId>
-    <artifactId>bitcoinj-parent</artifactId>
+    <groupId>com.rimbit</groupId>
+    <artifactId>rimbitj-parent</artifactId>
     <version>0.11.3</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>bitcoinj-tools</artifactId>
+  <artifactId>rimbitj-tools</artifactId>
 
-  <name>bitcoinj Tools</name>
-  <description>A collection of useful tools that use the bitcoinj library to perform wallet operations</description>
+  <name>rimbitj Tools</name>
+  <description>A collection of useful tools that use the rimbitj library to perform wallet operations</description>
 
   <build>
       <plugins>
@@ -52,7 +52,7 @@
                   </filters>
                   <transformers>
                       <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                          <mainClass>com.google.bitcoin.tools.WalletTool</mainClass>
+                          <mainClass>com.rimbit.rimbit.tools.WalletTool</mainClass>
                       </transformer>
                   </transformers>
               </configuration>
@@ -70,8 +70,8 @@
 
   <dependencies>
     <dependency>
-      <groupId>com.google</groupId>
-      <artifactId>bitcoinj</artifactId>
+      <groupId>com.rimbit</groupId>
+      <artifactId>rimbitj</artifactId>
       <version>${project.parent.version}</version>
     </dependency>
     <dependency>

@@ -20,19 +20,19 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.google</groupId>
-        <artifactId>bitcoinj-parent</artifactId>
+        <groupId>com.rimbit</groupId>
+        <artifactId>rimbitj-parent</artifactId>
         <version>0.11.3</version>
     </parent>
 
-    <artifactId>bitcoinj</artifactId>
+    <artifactId>rimbitj</artifactId>
 
-    <name>bitcoinj</name>
-    <description>A Java Bitcoin library</description>
+    <name>rimbitj</name>
+    <description>A Java Rimbit library</description>
 
     <packaging>jar</packaging>
 
-    <url>https://code.google.com/p/bitcoinj</url>
+    <url>https://code.google.com/p/rimbitj</url>
 
     <licenses>
         <license>
@@ -45,8 +45,8 @@
     <!-- Dummy block to make Maven Central happy: authors list is in AUTHORS -->
     <developers>
         <developer>
-            <name>The bitcoinj team</name>
-            <email>bitcoinj@googlegroups.com</email>
+            <name>The rimbitj team</name>
+            <email>rimbitj@googlegroups.com</email>
         </developer>
     </developers>
 
@@ -125,7 +125,7 @@
                 </executions>
             </plugin>
 
-            <!-- Verify the dependency chain: see https://github.com/gary-rowe/BitcoinjEnforcerRules for
+            <!-- Verify the dependency chain: see https://github.com/gary-rowe/RimbitjEnforcerRules for
                more information on this.
             -->
             <plugin>
@@ -194,7 +194,7 @@
             <version>3.0</version>
             <scope>test</scope>
         </dependency>
-        <!-- bitcoinj consumers are expected to provide their own SLF4J adapters
+        <!-- rimbitj consumers are expected to provide their own SLF4J adapters
              such as logback, slf4j-log4j12, slf4j-jcl and so on
              see http://www.slf4j.org/faq.html -->
         <dependency>
