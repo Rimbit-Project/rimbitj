@@ -4,7 +4,7 @@
 
   <groupId>com.rimbit</groupId>
   <artifactId>rimbitj-parent</artifactId>
-  <version>0.11.3</version>
+  <version>0.11.4</version>
   <packaging>pom</packaging>
 
   <modules>
